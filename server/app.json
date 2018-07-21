@@ -1,0 +1,14 @@
+{
+  "name": "heroku-cra-node",
+  "description": "web app made of create-react-app UI + Node API",
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
