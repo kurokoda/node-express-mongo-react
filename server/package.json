@@ -1,0 +1,25 @@
+{
+  "author": "Ian Greenough",
+  "dependencies": {
+    "@types/es6-shim": "^0.31.37",
+    "@types/express": "^4.16.0",
+    "express": "^4.16.3",
+    "nodemon": "^1.18.3",
+    "path": "^0.12.7",
+    "shelljs": "^0.8.2",
+    "typescript": "^2.9.2"
+  },
+  "description": "A server boilerplate built with Node, Express, and Typescript",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "node-express-typescript",
+  "private": false,
+  "scripts": {
+    "build": "npm run tsc",
+    "start": "nodemon ./build/server.js",
+    "test": "",
+    "tsc": "tsc",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
+  },
+  "version": "1.0.0"
+}
