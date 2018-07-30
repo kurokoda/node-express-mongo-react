@@ -1,18 +1,60 @@
 {
-  "dependencies": {
-    "concurrently": "^3.6.0"
+  "babel": {
+    "presets": [
+      "env"
+    ]
   },
-  "license": "MIT",
-  "main": "index.js",
-  "name": "node-expr",
+  "name": "heroku-cra-node",
+  "version": "1.0.0",
+  "description": "How to use create-react-app with a custom Node API on Heroku",
+  "engines": {
+    "node": "10.7.x"
+  },
   "scripts": {
-    "build": "concurrently --kill-others-on-fail \"yarn build:server\" \"yarn build:client\"",
-    "build:client": "cd ./client && yarn build",
-    "build:server": "cd ./server && yarn build",
-    "start": "yarn start:server",
-    "start:client": "cd ./client && yarn start",
-    "start:server": "cd ./server && yarn start",
-    "start:dev": "concurrently --kill-others-on-fail \"yarn start:server\" \"yarn start:client\""
+    "start": "nodemon server/src/start.js --trace-warnings",
+    "lint": "eslint server/src client/src --fix",
+    "heroku-postbuild": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "test": "mocha --require babel-core/register './server/**/*.test.js'"
   },
-  "version": "1.0.0"
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.18.3",
+    "connect-mongo": "^2.0.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "jade": "^1.11.0",
+    "mongoose": "^5.2.4",
+    "morgan": "^1.9.0",
+    "nodemailer": "^4.6.7",
+    "nodemon": "^1.18.3",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
+    "randomstring": "^1.1.5",
+    "shelljs": "^0.8.2",
+    "tslint-react": "^3.6.0",
+    "winston": "^3.0.0"
+  },
+  "repository": {},
+  "keywords": [],
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "rimraf": "^2.6.2"
+  }
 }

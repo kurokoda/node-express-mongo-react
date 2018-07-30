@@ -1,2 +1,0 @@
-{"name":"MongoError","message":"MongoDB connection error:","driver":true,"level":"error"}
-{"name":"MongoError","message":"db connection error:","driver":true,"level":"error"}
