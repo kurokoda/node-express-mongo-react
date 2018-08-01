@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+const mongoose         = require('mongoose');
+const mongoosePaginate = require('mongoose-paginate');
 
 // TODO add type precision
 
@@ -12,7 +13,7 @@ const Schema = new mongoose.Schema({
       type    : String,
       required: true,
     },
-    imageURL       : {
+    imageURL   : {
       type    : String,
       required: true,
     },
@@ -37,6 +38,8 @@ const Schema = new mongoose.Schema({
     timestamps: true,
   }
 );
+
+Schema.plugin(mongoosePaginate);
 
 const Product = mongoose.model('Product', Schema);
 export default Product;

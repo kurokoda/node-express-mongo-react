@@ -17,6 +17,7 @@ router.post(`${route}`, (req, res) => {
 
 // read -------------------------------------------------------------------
 router.get(`${route}:id`, (req, res) => {
+  console.log(req.params.id)
   read(req, res);
 });
 
