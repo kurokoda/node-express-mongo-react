@@ -9,11 +9,10 @@
   "description": "How to use create-react-app with a custom Node API on Heroku",
   "engines": {
     "node": "10.7.x",
-    "npm": "6.1.0"
   },
   "scripts": {
-    "start": "nodemon server/src/start.js --trace-warnings",
-    "lint": "eslint server/src react-ui/src --fix",
+    "start": "nodemon server/start.js",
+    "lint": "eslint react-ui/src server --fix",
     "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "test": "mocha --require babel-core/register './server/**/*.test.js'"
   },
