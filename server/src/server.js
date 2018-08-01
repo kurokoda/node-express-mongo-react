@@ -105,7 +105,7 @@ if (cluster.isMaster) {
   app.use(appRouter);
   app.use(authRouter);
   app.use(productRouter);
-  app.use(express.static(path.resolve(__dirname, '../../client/build')));
+  app.use(express.static(path.resolve(__dirname, '../../react-ui/build')));
   app.use(renderRouter);
 
 // Error middleware ----------------------------------------------------------------------
