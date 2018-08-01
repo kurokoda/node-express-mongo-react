@@ -7,7 +7,7 @@ const router = express.Router();
 // auth:login -------------------------------------------------------------------
 
 router.get(route, (req, res) => {
-  res.sendFile(path.join(__dirname, '../../../react-ui/build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../../../../react-ui/build', 'index.html'));
 });
 
 // exports -------------------------------------------------------------------
