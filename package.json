@@ -13,8 +13,8 @@
   },
   "scripts": {
     "start": "nodemon server/src/start.js --trace-warnings",
-    "lint": "eslint server/src client/src --fix",
-    "heroku-postbuild": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "lint": "eslint server/src react-ui/src --fix",
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "test": "mocha --require babel-core/register './server/**/*.test.js'"
   },
   "cacheDirectories": [
