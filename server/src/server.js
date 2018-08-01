@@ -107,18 +107,9 @@ if (cluster.isMaster) {
   app.use(productRouter);
 
   // All remaining requests return the React app, so it can handle routing.
-  app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
-  app.get('/one', function (request, response) {
-    response.sendFile(path.resolve(__dirname, '../../react-ui/build', 'index.html'));
-  });
-  app.get('/two', function (request, response) {
-    response.sendFile(path.resolve(__dirname, '../../../react-ui/build', 'index.html'));
-  });
-  app.get('/three', function (request, response) {
-    response.sendFile(path.resolve(__dirname, '../../../../react-ui/build', 'index.html'));
-  });
+  app.use(express.static(path.resolve(__dirname, '../../react-ui/build')));
   app.get('*', function (request, response) {
-    response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
+    response.sendFile(path.resolve(__dirname, '../../react-ui/build', 'index.html'));
   });
 
 // Error middleware ----------------------------------------------------------------------
