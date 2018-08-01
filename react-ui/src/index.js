@@ -21,6 +21,8 @@ const RootComponent      = () => (
   </Provider>
 );
 
+console.log('REACT_APP_NIGHTCRAWLER_API_BASE_URL', process.env.REACT_APP_NIGHTCRAWLER_API_BASE_URL)
+
 ReactDOM.render(<RootComponent/>, rootElement);
 
 registerServiceWorker();
