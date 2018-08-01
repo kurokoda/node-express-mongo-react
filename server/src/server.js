@@ -108,16 +108,16 @@ if (cluster.isMaster) {
 
   // All remaining requests return the React app, so it can handle routing.
   app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
-  app.get('1', function (request, response) {
+  app.get('one', function (request, response) {
     response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
   });
-  app.get('2', function (request, response) {
+  app.get('two', function (request, response) {
     response.sendFile(path.resolve(__dirname, '../../react-ui/build', 'index.html'));
   });
-  app.get('3', function (request, response) {
+  app.get('three', function (request, response) {
     response.sendFile(path.resolve(__dirname, '../../../react-ui/build', 'index.html'));
   });
-  app.get('4', function (request, response) {
+  app.get('four', function (request, response) {
     response.sendFile(path.resolve(__dirname, '../../../../react-ui/build', 'index.html'));
   });
   app.get('*', function (request, response) {
